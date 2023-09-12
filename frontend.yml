@@ -17,18 +17,25 @@
         path: /usr/share/nginx/html/*
         state: directory
 
-    - name: Download a file
-      ansible.builtin.get_url:
-        url: https://expense-artifacts.s3.amazonaws.com/frontend.zip
+    - name: Download and extract file
+      ansible.builtin.unarchive:
+        src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
         dest: /tmp/frontend.zip
+        remote_src: yes
+
+#      ansible.builtin.get_url:
+#        url: https://expense-artifacts.s3.amazonaws.com/frontend.zip
+#        dest: /tmp/frontend.zip
 
     - name: create nginx configuration
       ansible.builtin.copy:
         src: expense.conf
         dest: /etc/nginx/default.d/expense.conf
 
+    - name: starting nginx and enable
+      ansible.builtin.systemd:
+        name:nginx
+        state:restarted
+        enabled:yes
 
 
-  #  -Restart nginx
-  #  -Starting Nginx
-  #ansible.builtin.systemd
