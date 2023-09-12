@@ -13,7 +13,7 @@
          dest: /etc/yum.repos.d/mysql.repo
 
      - name: Install community server
-       ansible.builtin.community-server:
+       ansible.builtin.dnf:
          name: mysql-community-server
          state: installed
 
