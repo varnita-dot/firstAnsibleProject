@@ -3,9 +3,7 @@
    become: yes
    tasks:
      - name: Disable dnf module mysql
-       ansible.builtin.dnf:
-         name: dnf module disable mysql -y
-         state: present
+       ansible.builtin.shell: dnf module disable mysql -y
 
      - name: copy my sql repo
        ansible.builtin.copy:
