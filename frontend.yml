@@ -13,7 +13,7 @@ tasks:
      state: absent
 
   - name: Create a directory
-  ansible.builtin.file:
+   ansible.builtin.file:
       path: /usr/share/nginx/html/*
       state: directory
 
@@ -23,7 +23,7 @@ tasks:
       dest: /tmp/frontend.zip
 
    - name: create nginx configuration
-  ansible.builtin.copy:
+   ansible.builtin.copy:
      src: expense.conf
      dest: /etc/nginx/default.d/expense.conf
 
