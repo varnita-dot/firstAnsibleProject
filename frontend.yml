@@ -2,30 +2,30 @@
 hosts: all
 become: yes
 tasks:
-  -Installing Nginx
-ansible.builtin.dnf:
-  name: nginx
-  state: installed
+ - name: Installing Nginx
+   ansible.builtin.dnf:
+     name: nginx
+     state: installed
    
-  -Remove previous content
-ansible.builtin.file:
-   path: rm -rf /usr/share/nginx/html/*
-   state: absent
+ - name: Remove previous content
+   ansible.builtin.file:
+     path: rm -rf /usr/share/nginx/html/*
+     state: absent
 
-  -Create a directory
-ansible.builtin.file:
-    path: /usr/share/nginx/html/*
-    state: directory
+  - name: Create a directory
+  ansible.builtin.file:
+      path: /usr/share/nginx/html/*
+      state: directory
 
-  -Download a file
-ansible.builtin.get_url:
-    url: https://expense-artifacts.s3.amazonaws.com/frontend.zip
-    dest: /tmp/frontend.zip
+  - name: Download a file
+   ansible.builtin.get_url:
+      url: https://expense-artifacts.s3.amazonaws.com/frontend.zip
+      dest: /tmp/frontend.zip
 
-  -create nginx configuration
-ansible.builtin.copy:
-   src: expense.conf
-   dest: /etc/nginx/default.d/expense.conf
+   - name: create nginx configuration
+  ansible.builtin.copy:
+     src: expense.conf
+     dest: /etc/nginx/default.d/expense.conf
 
 #  -Restart nginx
   #  -Starting Nginx
