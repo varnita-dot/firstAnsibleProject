@@ -22,7 +22,7 @@
       url: https://expense-artifacts.s3.amazonaws.com/frontend.zip
       dest: /tmp/frontend.zip
 
-    -name: create nginx configuration
+  - name: create nginx configuration
     ansible.builtin.copy:
       src: expense.conf
       dest: /etc/nginx/default.d/expense.conf
