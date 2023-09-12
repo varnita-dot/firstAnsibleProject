@@ -14,13 +14,13 @@
 
     - name: Create a directory
       ansible.builtin.file:
-        path: /usr/share/nginx/html/*
+        path: /usr/share/nginx/html
         state: directory
 
     - name: Download and extract file
       ansible.builtin.unarchive:
         src: https://expense-artifacts.s3.amazonaws.com/frontend.zip
-        dest: /tmp/frontend.zip
+        dest: /usr/share/nginx/html
         remote_src: yes
 
 #      ansible.builtin.get_url:
