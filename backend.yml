@@ -8,7 +8,7 @@
     - name: Install node js
       ansible.builtin.dnf:
         name: nodejs
-        state: latest
+
 
     - name: Add application user
       ansible.builtin.user:
