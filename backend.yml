@@ -25,13 +25,10 @@
         dest: /app
         remote_src: yes
 
-    - name: change the directory
-      ansible.builtin.file:
-        args:
-          chdir: /app
-
     - name: Install NodeJS dependencies
       ansible.builtin.shell: npm install
+      args:
+        chdir: /app
 
 
     - name: set up backend service
