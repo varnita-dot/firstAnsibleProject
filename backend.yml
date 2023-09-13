@@ -27,7 +27,8 @@
 
     - name: change the directory
       ansible.builtin.file:
-        chmod: /app
+        args:
+          chdir: /app
 
     - name: Install NodeJS dependencies
       ansible.builtin.shell: npm install
