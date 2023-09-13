@@ -7,8 +7,8 @@
          src: mysql.repo
          dest: /etc/yum.repos.d/mysql.repo
 
-     - name: Disable dnf module mysql
-       ansible.builtin.shell: dnf module disable mysql -y
+#     - name: Disable dnf module mysql
+#       ansible.builtin.shell: dnf module disable mysql -y
 
      - name: Install community server
        ansible.builtin.dnf:
