@@ -10,16 +10,10 @@
   ansible.builtin.user:
     name: expense
 
-- name: Create a directory
-  ansible.builtin.file:
-    path: /app
-    state: directory
-
-- name: download and extract file
-  ansible.builtin.unarchive:
-    src: https://expense-artifacts.s3.amazonaws.com/backend.zip
-    dest: /app
-    remote_src: yes
+- name: run common code
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app_prere
 
 - name: Install NodeJS dependencies
   ansible.builtin.shell: npm install

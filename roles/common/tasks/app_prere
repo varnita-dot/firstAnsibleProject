@@ -1,0 +1,10 @@
+- name: Create a directory
+  ansible.builtin.file:
+    path: "{{ loc_app }}"
+    state: directory
+
+- name: download and extract file
+  ansible.builtin.unarchive:
+    src: https://expense-artifacts.s3.amazonaws.com/{{component}}}.zip
+    dest: /app
+    remote_src: yes
