@@ -1,3 +1,8 @@
+- name: clean a directory
+  ansible.builtin.file:
+    file: "{{ loc_app }}"
+    state: absent
+
 - name: Create a directory
   ansible.builtin.file:
     path: "{{ loc_app }}"
