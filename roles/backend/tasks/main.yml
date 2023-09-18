@@ -22,7 +22,7 @@
 
 
 - name: set up backend service
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
