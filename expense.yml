@@ -1,5 +1,5 @@
  - name: Expense Project Setup
-   hosts: all
+   hosts: localhost
    become: yes
    roles:
     - "{{service_name}}"
