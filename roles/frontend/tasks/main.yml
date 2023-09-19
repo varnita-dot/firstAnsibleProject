@@ -13,15 +13,16 @@
     name: common
     tasks_from: app_prere
 
-- name: create nginx configuration
-  ansible.builtin.template:
-    src: expense.conf
-    dest: /etc/nginx/nginx.conf
-
 - name: Change nginx configuration
   ansible.builtin.template:
-    src: nginx.conf
+    src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
+
+- name: create nginx configuration
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 
 - name: starting nginx and enable
   ansible.builtin.systemd:
