@@ -1,0 +1,5 @@
+- name: ELK Automation
+  hosts: all
+  become: yes
+  roles:
+    - elk
