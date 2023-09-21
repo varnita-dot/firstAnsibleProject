@@ -5,3 +5,4 @@
 - name: load filebeat
   ansible.builtin.include_tasks: filebeat.yml
   when: elk_component == "filebeat"
+
