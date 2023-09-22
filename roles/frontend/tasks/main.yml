@@ -35,4 +35,8 @@
     name: elk
     tasks_from: filebeat
 
+- name: Prometheus
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: prometheus
 
