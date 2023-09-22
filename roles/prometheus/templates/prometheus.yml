@@ -33,4 +33,4 @@ scrape_configs:
      # scheme defaults to 'http'.
 
     static_configs:
-      - targets: [ "frontend.varraj20316.online:9090"]
+      - targets: [ "frontend.varraj20316.online:9100"]
