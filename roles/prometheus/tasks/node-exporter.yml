@@ -6,8 +6,8 @@
 
 - name: copy node exporter file
   ansible.builtin.template:
-    src: node_exporter
-    dest: /etc/systemd/system/node_exporter
+    src: node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
 
 - name: Restart node exporter
   ansible.builtin.systemd:
