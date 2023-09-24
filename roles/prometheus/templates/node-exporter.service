@@ -1,9 +1,9 @@
 [Unit]
-Description = node exporter Service
+Description = Node Exporter Service
 
 [Service]
-ExecStart=/etc/systemd/system/node_exporter
-SyslogIdentifier=prometheus
+ExecStart=/opt/node_exporter-{{node_exporter_version}}.linux-amd64/node_exporter --collector.systemd
+SyslogIdentifier=node-exporter
 
 [Install]
 WantedBy=multi-user.target
