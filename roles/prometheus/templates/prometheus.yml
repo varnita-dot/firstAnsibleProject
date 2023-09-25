@@ -36,5 +36,3 @@ scrape_configs:
             target_label: privateip
           - source_labels: [ __meta_ec2_tag_Name ]
             target_label: name
-
-
