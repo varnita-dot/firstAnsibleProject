@@ -3,11 +3,11 @@
     src: prometheus.yml
     dest: /opt/prometheus/prometheus.yml
 
-#- name: Copy record configuration
-#  ansible.builtin.template:
-#    src: record.yml
-#    dest: /opt/prometheus/record.yml
-#
+- name: Copy record configuration
+  ansible.builtin.template:
+    src: record.yml
+    dest: /opt/prometheus/record.yml
+
 #- name: Copy rules configuration
 #  ansible.builtin.template:
 #    src: alerts.yml
