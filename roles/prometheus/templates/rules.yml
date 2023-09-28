@@ -1,0 +1,10 @@
+groups:
+  - name: ServerDownAlert
+    rules:
+#      - record: job:request_duration_seconds:histogram_quantile99
+#        expr: histogram_quantile(0.99, sum by (le, job) (rate(request_duration_seconds_bucket[1m])))
+      - alert: Server Down
+        expr: up==0
+        for: 1m
+        annotations:
+          summary: Server Down Alert
