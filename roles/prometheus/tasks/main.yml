@@ -8,10 +8,10 @@
     src: record.yml
     dest: /opt/prometheus/record.yml
 
-#- name: Copy rules configuration
-#  ansible.builtin.template:
-#    src: alerts.yml
-#    dest: /opt/prometheus/alerts.yml
+- name: Copy rules configuration
+  ansible.builtin.template:
+    src: alerts.yml
+    dest: /opt/prometheus/alerts.yml
 
 - name: restart prometheus
   ansible.builtin.systemd:
