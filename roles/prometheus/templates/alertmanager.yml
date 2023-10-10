@@ -15,10 +15,6 @@ receivers:
         auth_password: 'BAUdf4BvuWfI57z2m9+ISSI9l2trqut0wVR1OSsuqdtZ'
         from: varnitach@gmail.com
         to: varnitach@gmail.com
-        headers:
-        subject: 'Prometheus Mail Alerts'
+        require_tls: true
 
-inhibit_rules:
-  - source_match:
-      severity: 'critical'
-    equal: ['alertname', 'dev', 'instance']
+
