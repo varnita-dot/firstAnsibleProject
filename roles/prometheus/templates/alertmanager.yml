@@ -16,5 +16,3 @@ receivers:
         from: varnitach@gmail.com
         to: varnitach@gmail.com
         require_tls: true
-
-
