@@ -34,7 +34,7 @@ groups:
           summary: My sql service Down Alert
 
       - alert: MemoryusageAlert
-        expr: 100-(node_memory_MemFree_bytes+node_memory_Cached_bytes+node_memory_Buffers_bytes)/node_memory_MemTotal_bytes*100 > 80
+        expr: 100-(node_memory_MemFree_bytes+node_memory_Cached_bytes+node_memory_Buffers_bytes)/node_memory_MemTotal_bytes*100 > 15
         for: 1m
         labels:
           severity: critical
@@ -42,7 +42,7 @@ groups:
           summary: Large memory consume Alert
 
       - alert: CPUusageAlert
-        expr: 100-avg by(name)(rate(node_cpu_seconds_total{mode="idle"}[1m]))*100 > 80
+        expr: 100-avg by(name)(rate(node_cpu_seconds_total{mode="idle"}[1m]))*100 > 0
         for: 1m
         labels:
           severity: critical
